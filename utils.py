@@ -80,7 +80,7 @@ def config_parser():
 
     ## blender flags
     parser.add_argument("--white_bkgd", action='store_true', 
-                        help='set to render synthetic data on a white bkgd (always use for dvoxels)')
+                        help='set to render synthetic data on a white background (always use for dvoxels)')
     parser.add_argument("--half_res", action='store_true', 
                         help='load blender synthetic data at 400x400 instead of 800x800')
 
@@ -109,4 +109,5 @@ def config_parser():
                         help='frequency of render_poses video saving')
 
     return parser
+
 

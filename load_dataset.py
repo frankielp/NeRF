@@ -45,6 +45,22 @@ def pose_spherical(theta, phi, radius):
 
 
 def load_blender(basedir, half_res=False, testskip=1):
+    '''
+    Load and process Blender dataset images and metadata.
+
+    Parameters:
+    basedir (str): The base directory containing dataset files.
+    half_res (bool): Option to load half-resolution images if True. Default is False.
+    testskip (int): Skipping factor for test data. Default is 1.
+
+    Returns:
+    tuple: A tuple containing the processed dataset and related information.
+        - imgs (np.ndarray): Numpy array of images in the dataset.
+        - poses (np.ndarray): Numpy array of pose transformation matrices relating to each images.
+        - render_poses (torch.Tensor): Tensor of pose transformation matrices for rendering (360 degree around the object) - TESTING.
+        - image_info (list): List containing [height, width, focal length].
+        - index_split (list): List of indices indicating data split boundaries.
+    '''
     # List of data splits
     splits = ['train', 'val', 'test']
     # Dictionary to store metadata for each split
